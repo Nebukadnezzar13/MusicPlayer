@@ -164,3 +164,9 @@ D:\Github\MusicPlayer\PMPP\obj\Debug\net6.0-windows\PMPP_MarkupCompile.lref
 D:\Github\MusicPlayer\PMPP\obj\Debug\net6.0-windows\App.baml
 D:\Github\MusicPlayer\PMPP\obj\Debug\net6.0-windows\PMPP.Properties.Resources.resources
 D:\Github\MusicPlayer\PMPP\obj\Debug\net6.0-windows\PMPP.csproj.GenerateResource.cache
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\RestSharp.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\SpotifyAPI.Web.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\System.Text.Json.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
