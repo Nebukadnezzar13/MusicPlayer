@@ -17,9 +17,14 @@ namespace PMPP.ViewModels
 
         private DelegateCommand _playCommand;
         private DelegateCommand _connSpot;
+        private DelegateCommand _connYout;
 
         public DelegateCommand ConnSpot =>
            _connSpot ?? (_connSpot = new DelegateCommand(connSpot));
+
+        public DelegateCommand ConnYout =>
+        _connYout ?? (_connYout = new DelegateCommand(connYout));
+
 
         public DelegateCommand PlayCommand =>
             _playCommand ?? (_playCommand = new DelegateCommand(playCommand));
@@ -33,6 +38,11 @@ namespace PMPP.ViewModels
         private void connSpot()
         {
             conn.connectToSpot();
+        }
+
+        private void connYout()
+        {
+            conn.connectYT();
         }
 
         public MainWindowViewModel()

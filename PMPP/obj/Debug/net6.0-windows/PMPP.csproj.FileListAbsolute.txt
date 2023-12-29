@@ -170,3 +170,11 @@ D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\SpotifyAPI.Web.dll
 D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
 D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\System.Text.Json.dll
 D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\Google.Apis.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\Google.Apis.Auth.PlatformServices.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\Google.Apis.Auth.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\Google.Apis.Core.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\Google.Apis.YouTube.v3.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\System.CodeDom.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\System.Management.dll
+D:\Github\MusicPlayer\PMPP\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll

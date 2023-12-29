@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7JH9EXoNMoLcGdI2uwL0UW6sYj0p1iFeSzrGNQyIAALYBplME+TRIGANx2iJIC6TZ+yqx/y8LUI6uxXlZXBj2g==",
+  "dgSpecHash": "xpnpf0jR/tB7g9ki4dejAkl7TlDqdJ5dOEmVKH573Ha24JiJrQiqZ7Ls5rEY9kJPVRz6o1ziQI21ama0MMCnrw==",
   "success": true,
   "projectFilePath": "D:\\Github\\MusicPlayer\\PMPP\\PMPP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hissl\\.nuget\\packages\\google.apis\\1.64.0\\google.apis.1.64.0.nupkg.sha512",
+    "C:\\Users\\hissl\\.nuget\\packages\\google.apis.auth\\1.64.0\\google.apis.auth.1.64.0.nupkg.sha512",
+    "C:\\Users\\hissl\\.nuget\\packages\\google.apis.core\\1.64.0\\google.apis.core.1.64.0.nupkg.sha512",
+    "C:\\Users\\hissl\\.nuget\\packages\\google.apis.youtube.v3\\1.64.0.3205\\google.apis.youtube.v3.1.64.0.3205.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
@@ -21,6 +25,8 @@
     "C:\\Users\\hissl\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\spotifyapi.web\\7.0.2\\spotifyapi.web.7.0.2.nupkg.sha512",
+    "C:\\Users\\hissl\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\hissl\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\hissl\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",

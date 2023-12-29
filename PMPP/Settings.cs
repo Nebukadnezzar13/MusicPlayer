@@ -15,6 +15,9 @@ namespace PMPP
         private string spotPws = string.Empty;
         private static Settings _instance;
 
+
+        private string youtubeApiKey = "AIzaSyCQxoMNUS6jZzxRhzkTHJshQ7m32_vzJ24";
+
         public string SpotPws { get => spotPws; set => spotPws = value; }
         public string SpotAcc { get => spotAcc; set => spotAcc = value; }
         public string SpotClientId { get => spotClientId; set => spotClientId = value; }
@@ -35,5 +38,7 @@ namespace PMPP
                 return _instance;
             }
         }
+
+        public string YoutubeApiKey { get => youtubeApiKey; set => youtubeApiKey = value; }
     }
 }

@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Views\logo.jpg" />
+    <None Remove="Views\nextTrack.png" />
+    <None Remove="Views\pauseTrack.png" />
+    <None Remove="Views\playTrack.png" />
+    <None Remove="Views\prevTrack.png" />
+    <None Remove="Views\Spotify_Logo_RGB_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ModernWpfUI" Version="0.9.6" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="SpotifyAPI.Web" Version="7.0.2" />
+    <PackageReference Include="SpotifyAPI.Web.Auth" Version="7.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\logo.jpg" />
+    <Resource Include="Views\nextTrack.png" />
+    <Resource Include="Views\pauseTrack.png" />
+    <Resource Include="Views\playTrack.png" />
+    <Resource Include="Views\prevTrack.png" />
+    <Resource Include="Views\Spotify_Logo_RGB_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
