@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,23 +10,24 @@ namespace PMPP
     internal class Settings
     {
 
-        private string spotClientId = "63d780f87df64cfa91e5878c59eefcfa";
-        private string spotClientSecret = "b4816416223548a0a56288f8a2ed5e2b";
+        private string spotClientId = "";
+        private string spotClientSecret = "";
         private string spotAcc = string.Empty;
         private string spotPws = string.Empty;
         private static Settings _instance;
+        private string localSongDir = string.Empty;
 
-
-        private string youtubeApiKey = "AIzaSyCQxoMNUS6jZzxRhzkTHJshQ7m32_vzJ24";
+        private string youtubeApiKey = "";
 
         public string SpotPws { get => spotPws; set => spotPws = value; }
         public string SpotAcc { get => spotAcc; set => spotAcc = value; }
         public string SpotClientId { get => spotClientId; set => spotClientId = value; }
         public string SpotClientSecret { get => spotClientSecret; set => spotClientSecret = value; }
-
+        public string YoutubeApiKey { get => youtubeApiKey; set => youtubeApiKey = value; }
+        public string LocalSongDir { get => localSongDir; set => localSongDir = value; }
         private Settings()
         {
-            // Initialisiere deine Einstellungen hier
+            
         }
         public static Settings Instance
         {
@@ -39,6 +41,19 @@ namespace PMPP
             }
         }
 
-        public string YoutubeApiKey { get => youtubeApiKey; set => youtubeApiKey = value; }
+      public void loadSettings(string savedJson)
+        {
+
+            JObject jsonObject = JObject.Parse(savedJson);
+            localSongDir = jsonObject["localSongDir"].ToString();
+        }
+
+        public void saveSettings() {
+        
+            Initialisation initialisation = new Initialisation();
+
+            initialisation.save();
+
+        }
     }
 }

@@ -19,6 +19,7 @@ using Google.Apis.YouTube.v3;
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3.Data;
 using SearchResult = Google.Apis.YouTube.v3.Data.SearchResult;
+using System.Reflection.Metadata;
 
 namespace PMPP
 {
@@ -57,7 +58,20 @@ namespace PMPP
                 //     UseShellExecute = true
                 // });
                 // string code = Console.ReadLine();
-                getUsersQueue();
+//                var content = new FormUrlEncodedContent(new[]
+//                {
+//                   new KeyValuePair<string, string>("grant_type", "authorization_code"),
+//                  new KeyValuePair<string, string>("code", sett.),
+//                 new KeyValuePair<string, string>("redirect_uri", spotRedirectUrl),
+//                     new KeyValuePair<string, string>("client_id", sett.SpotClientId),
+//                new KeyValuePair<string, string>("client_secret", sett.SpotClientSecret),
+//                  new KeyValuePair<string, string>("scope", "user-read-private user-read-email playlist-read-private"), // Füge hier die benötigten Scopes hinzu
+//});
+                using (HttpClient client = new HttpClient())
+                {
+                    //var response = await client.PostAsync("https://accounts.spotify.com/api/token", content);
+                    getUsersQueue();
+                }
             }
             else
             {

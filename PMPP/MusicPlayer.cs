@@ -17,9 +17,22 @@ namespace PMPP
 
         private MusicPlayer()
         {
+            Initialisation initSett = new Initialisation();
+            initSett.load();
 
+            Settings setting = Settings.Instance;
+            if(setting.LocalSongDir == null)
+            {
+                //TODO show window for giving dir url
+                setting.LocalSongDir = "C:\\Users\\hissl\\Music\\AmazonMusicDownload\\Metrickz";
+
+
+
+            }
 
         }
+
+
 
         public static MusicPlayer Instance
         {

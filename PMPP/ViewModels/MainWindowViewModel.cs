@@ -7,6 +7,7 @@ namespace PMPP.ViewModels
     {
         private string _title = "Prism Application";
         connector conn = new connector();
+
         public string Title
         {
             get { return _title; }
