@@ -17,6 +17,8 @@ using System.IO;
 using System.Threading.Channels;
 using Google.Apis.YouTube.v3;
 using Google.Apis.Services;
+using Google.Apis.YouTube.v3.Data;
+using SearchResult = Google.Apis.YouTube.v3.Data.SearchResult;
 
 namespace PMPP
 {
@@ -30,6 +32,8 @@ namespace PMPP
         string spotRedirectUrl = "https://open.spotify.com/intl-de?";
         string spotAuthorizeUrl = "https://accounts.spotify.com/authorize?client_id={0}&response_type=code&redirect_uri={1}&scope=user-read-private%20user-read-email";
         string spotPlayerPlayUrl = "https://api.spotify.com/v1/me/player/play";
+        string spoUsersQueue = "https://api.spotify.com/v1/me/player/queue";
+        string spotCurrentPlaying = "https://api.spotify.com/v1/me/player/recently-played";
         HttpClient httpClient = null;
         private string spotToken =null;
 
@@ -46,13 +50,14 @@ namespace PMPP
             {
                 string spotRedir = WebUtility.UrlEncode(spotRedirectUrl);
                 string spotclientID = sett.SpotClientId;
-               string website= string.Format(spotAuthorizeUrl, spotclientID, spotRedir);
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = website,
-                    UseShellExecute = true
-                });
-                string code = Console.ReadLine();
+                //string website= string.Format(spotAuthorizeUrl, spotclientID, spotRedir);
+                // Process.Start(new ProcessStartInfo
+                // {
+                //     FileName = website,
+                //     UseShellExecute = true
+                // });
+                // string code = Console.ReadLine();
+                getUsersQueue();
             }
             else
             {
@@ -64,8 +69,9 @@ namespace PMPP
         async Task<string> establishConn()
         {
             httpClient = new HttpClient();
-
-            var request = new HttpRequestMessage(HttpMethod.Post, spotToken);
+            // var authResult = new ValueTask<AuthResult>();
+            var authResult = new AuthResult();
+            var request = new HttpRequestMessage(HttpMethod.Post, spotTokenURL);
            
             request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(
                 "Basic",Convert.ToBase64String(Encoding.UTF8.GetBytes($"{sett.SpotClientId}:{sett.SpotClientSecret}")));
@@ -75,12 +81,61 @@ namespace PMPP
             });
 
             var response = await httpClient.SendAsync(request);
+            try
+            {
+                using var responseStream = await response.Content.ReadAsStreamAsync();
+                 authResult = await System.Text.Json.JsonSerializer.DeserializeAsync<AuthResult>(responseStream);
 
-            using var responseStream = await response.Content.ReadAsStreamAsync();
-            var authResult = await System.Text.Json.JsonSerializer.DeserializeAsync<AuthResult>(responseStream);
+            }
+            catch (Exception)
+            {
 
-        
+                
+            }
+                   
             return authResult.access_token;
+        }
+
+        async Task getUsersQueue()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {spotToken}");
+
+              
+
+                var response = await client.GetAsync(spotCurrentPlaying);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Die Wiedergabeliste wird jetzt abgespielt!");
+                }
+                else
+                {
+                    Console.WriteLine($"Fehler beim Abspielen der Wiedergabeliste: {response.ReasonPhrase}");
+                }
+            }
+        }
+
+         async Task PlayPlaylist(string playlistId)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {spotToken}");
+
+                var content = new StringContent($"{{\"context_uri\":\"spotify:playlist:{playlistId}\"}}");
+
+                var response = await client.PutAsync(spotPlayerPlayUrl, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Die Wiedergabeliste wird jetzt abgespielt!");
+                }
+                else
+                {
+                    Console.WriteLine($"Fehler beim Abspielen der Wiedergabeliste: {response.ReasonPhrase}");
+                }
+            }
         }
 
         public async void connectYT()
@@ -116,7 +171,7 @@ namespace PMPP
 
 
                 // Process  the video responses 
-                res.AddRange(searchListResponse.Items);
+                //res.AddRange(searchListResponse.Items);
 
                 nextpagetoken = searchListResponse.NextPageToken;
 
